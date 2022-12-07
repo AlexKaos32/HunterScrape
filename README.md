@@ -2,6 +2,8 @@ This is a python script using the existing pyhunter library to pull data from a 
 
 Requirements: 
 
-python3 -m pip uninstall pyppeteer pyee
-python3 -m pip install --upgrade urllib3
-python3 -m pip install pyhunter
+`python3 -m pip uninstall pyppeteer pyee`
+
+`python3 -m pip install --upgrade urllib3`
+
+`python3 -m pip install pyhunter`
