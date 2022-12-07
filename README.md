@@ -1,4 +1,4 @@
-This is a python script using the existing pyhunter library to pull data from a domain, then generate a target email list.
+This is a python script using the domain_search module from the pyhunter library to pull data on a target domain, then generate a target email list.
 
 Requirements: 
 
