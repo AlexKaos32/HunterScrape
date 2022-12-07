@@ -2,6 +2,7 @@
 
 from pyhunter import PyHunter
 import argparse
+import sys
 
 parser = argparse.ArgumentParser()
 
@@ -10,6 +11,7 @@ parser.add_argument("-k", "--key", type=str, required=True, help="Your hunter.io
 args = parser.parse_args()
 
 hkey = PyHunter(args.key)
-info = hkey.domain_search(args.domain)
+scraped = hkey.domain_search(args.domain)
 
-print (info)
+sys.stdout = open('hunted.json', 'wt')
+print (scraped)
