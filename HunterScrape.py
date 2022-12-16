@@ -28,7 +28,7 @@ jdata = huntFile.read()
 #Parsing for emails
 obj=json.loads(jdata)
 entries = obj["data"]["emails"]
-
 bounty = list(map(itemgetter('value'), entries))
 
+#Here's the loot!
 print(str(bounty))
