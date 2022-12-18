@@ -12,16 +12,16 @@ parser.add_argument("-d", "--domain", type=str, required=True, help="Target doma
 parser.add_argument("-k", "--key", type=str, required=True, help="Your hunter.io API key")
 args = parser.parse_args()
 
-#Request info from
+#Request info from hunter using the API
 url = "https://api.hunter.io/v2/domain-search?domain="
 req = ''.join([url, args.domain, "&limit=100", "&api_key=", args.key])
 hunted = requests.get(req)
 
-#Output results to file to parse here, and further analysis
+#Output results to file to parse here, and further analysis if needed
 with open ("hunted.json", "w") as f:
     f.write((hunted.text))
 
-#Opening the output data
+#Opening the output data we just created
 huntFile = open('hunted.json','r')
 jdata = huntFile.read()
 
