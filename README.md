@@ -14,4 +14,10 @@ Requirements:
 
 `python3 -m pip install pyhunter`
 
+
+Example Usage:
+
+`./HunterScrape.py -d $targetdomain.org -k $YOUR_API_KEY`
+
+
 To Do: Add an option for offset parameter to allow getting all emails.
