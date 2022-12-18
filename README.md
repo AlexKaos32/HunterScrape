@@ -5,16 +5,6 @@ For now if you need more than 100, edit line 17 to reflect the following:
 Where `N` is the number of emails you want to skip collecting. For example, if you need to get 200 emails, set the offset to 100 on the second run to skip the first 100 emails you've already gathered.
 
 
-
-Requirements: 
-
-`python3 -m pip uninstall pyppeteer pyee`
-
-`python3 -m pip install --upgrade urllib3`
-
-`python3 -m pip install pyhunter`
-
-
 Example Usage:
 
 `./HunterScrape.py -d $targetdomain.org -k $YOUR_API_KEY`
