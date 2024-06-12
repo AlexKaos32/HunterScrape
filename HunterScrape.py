@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import requests, argparse, sys, json
-from operator import itemgetter
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--domain", type=str, required=True, help="Target domain to hunt")
