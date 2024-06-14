@@ -5,7 +5,7 @@ import requests, argparse, sys, json
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--domain", type=str, required=True, help="Target domain to hunt")
 parser.add_argument("-k", "--key", type=str, required=True, help="Your hunter.io API key")
-parser.add_argument("-l", "--limit", type=str, help="Number of emails to pull, limit 100" )
+parser.add_argument("-l", "--limit", type=str, default=str(1), help="Number of emails to pull, limit 100" )
 parser.add_argument("-f", "--full", action='store_true', help="Toggle Full Results")
 args = parser.parse_args()
 
