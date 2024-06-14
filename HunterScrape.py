@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 
-import requests, argparse, sys, json
+import requests, argparse, sys, json, pathlib
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--domain", type=str, required=True, help="Target domain to hunt")
 parser.add_argument("-k", "--key", type=str, required=True, help="Your hunter.io API key")
 parser.add_argument("-l", "--limit", type=str, default=str(1), help="Number of emails to pull, limit 100" )
 parser.add_argument("-f", "--full", action='store_true', help="Toggle Full Results")
+parser.add_argument("-o", "--outfile", type=str, help="Store emails in a text file")
+
 args = parser.parse_args()
 
 url = "https://api.hunter.io/v2/domain-search?domain="
@@ -53,5 +55,9 @@ else:
     total_check()
     obj["emails"] = [email['value'] for email in obj["data"]["emails"]]
 
-for email in obj["emails"]:
-    print(email)
+if args.outfile:
+    p = pathlib.Path(args.outfile)
+    p.write_text('\n'.join(obj["emails"]))
+else:
+    for email in obj["emails"]:
+        print(email)
